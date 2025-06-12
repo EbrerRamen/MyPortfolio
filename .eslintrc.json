@@ -17,7 +17,19 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier"],
   "rules": {
-    "prettier/prettier": "error",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "lf",
+        "semi": true,
+        "singleQuote": true,
+        "jsxSingleQuote": false,
+        "printWidth": 80,
+        "tabWidth": 2,
+        "trailingComma": "es5"
+      }
+    ],
+    "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off"
   }

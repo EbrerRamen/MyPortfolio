@@ -3,13 +3,23 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Code, Facebook, Mail, ArrowRight, Github, Linkedin } from 'lucide-react';
+import {
+  Code,
+  Facebook,
+  Mail,
+  ArrowRight,
+  Github,
+  Linkedin,
+} from 'lucide-react';
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
       {/* Hero Section */}
-      <section id="home" className="h-screen flex items-center justify-center relative overflow-hidden">
+      <section
+        id="home"
+        className="h-screen flex items-center justify-center relative overflow-hidden"
+      >
         {/* Animated background pattern */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent"></div>
@@ -19,7 +29,7 @@ export default function Home() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
           className="relative z-10 text-center max-w-4xl mx-auto px-4"
         >
           <motion.div
@@ -28,9 +38,11 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mb-6"
           >
-            <span className="text-indigo-400 font-medium tracking-wider uppercase text-sm">Full Stack Developer</span>
+            <span className="text-indigo-400 font-medium tracking-wider uppercase text-sm">
+              Full Stack Developer
+            </span>
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -39,16 +51,17 @@ export default function Home() {
           >
             Hi, I&apos;m Abrar Rahman
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             className="text-xl md:text-2xl mb-12 text-gray-400 font-light max-w-2xl mx-auto"
           >
-            Crafting elegant solutions to complex problems through clean, efficient code and innovative design.
+            Crafting elegant solutions to complex problems through clean,
+            efficient code and innovative design.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,30 +106,34 @@ export default function Home() {
               Featured Projects
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              A collection of my recent work, showcasing my expertise in full-stack development and problem-solving.
+              A collection of my recent work, showcasing my expertise in
+              full-stack development and problem-solving.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: "HMS Remake",
-                description: "A modern Hospital Management System with advanced features for managing patient records, appointments, and hospital operations.",
-                link: "https://hms-remake.onrender.com",
-                delay: 0.2
+                title: 'HMS Remake',
+                description:
+                  'A modern Hospital Management System with advanced features for managing patient records, appointments, and hospital operations.',
+                link: 'https://hms-remake.onrender.com',
+                delay: 0.2,
               },
               {
-                title: "Mobile Benchmarking",
-                description: "A comprehensive mobile device benchmarking platform that helps users compare and analyze mobile device performance metrics.",
-                link: "https://mobile-benchmarking-frontend.onrender.com",
-                delay: 0.4
+                title: 'Mobile Benchmarking',
+                description:
+                  'A comprehensive mobile device benchmarking platform that helps users compare and analyze mobile device performance metrics.',
+                link: 'https://mobile-benchmarking-frontend.onrender.com',
+                delay: 0.4,
               },
               {
-                title: "StandupSync",
-                description: "A collaborative platform for managing and organizing team standup meetings, making daily sync-ups more efficient and organized.",
-                link: "https://standupsync.onrender.com",
-                delay: 0.6
-              }
+                title: 'StandupSync',
+                description:
+                  'A collaborative platform for managing and organizing team standup meetings, making daily sync-ups more efficient and organized.',
+                link: 'https://standupsync.onrender.com',
+                delay: 0.6,
+              },
             ].map((project) => (
               <motion.div
                 key={project.title}
@@ -133,11 +150,16 @@ export default function Home() {
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   {project.description}
                 </p>
-                <Button 
+                <Button
                   asChild
                   className="group/btn bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
                 >
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
                     View Project
                     <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                   </a>
@@ -163,7 +185,8 @@ export default function Home() {
               Get in Touch
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
+              Have a project in mind? Let&apos;s discuss how we can work
+              together to bring your ideas to life.
             </p>
           </motion.div>
 
@@ -176,7 +199,10 @@ export default function Home() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Name
                 </label>
                 <input
@@ -187,7 +213,10 @@ export default function Home() {
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-300 mb-2"
+                >
                   Email
                 </label>
                 <input
@@ -199,7 +228,10 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-300 mb-2"
+              >
                 Message
               </label>
               <textarea
@@ -230,7 +262,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <h3 className="text-2xl font-bold text-white mb-2">Abrar Rahman</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Abrar Rahman
+              </h3>
               <p className="text-gray-400">Full Stack Developer</p>
             </motion.div>
 
@@ -241,19 +275,42 @@ export default function Home() {
               viewport={{ once: true }}
               className="flex space-x-6"
             >
-              <a href="https://github.com/EbrerRamen" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+              <a
+                href="https://github.com/EbrerRamen"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+              >
                 <Github size={24} />
               </a>
-              <a href="https://www.linkedin.com/in/abrar-rahman-7a97b825b/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+              <a
+                href="https://www.linkedin.com/in/abrar-rahman-7a97b825b/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+              >
                 <Linkedin size={24} />
               </a>
-              <a href="https://leetcode.com/u/abrar_rayman/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+              <a
+                href="https://leetcode.com/u/abrar_rayman/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+              >
                 <Code size={24} />
               </a>
-              <a href="https://www.facebook.com/abrar.rahman.752002/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+              <a
+                href="https://www.facebook.com/abrar.rahman.752002/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+              >
                 <Facebook size={24} />
               </a>
-              <a href="mailto:abrarrahman80@gmail.com" className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform">
+              <a
+                href="mailto:abrarrahman80@gmail.com"
+                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
+              >
                 <Mail size={24} />
               </a>
             </motion.div>
@@ -265,7 +322,9 @@ export default function Home() {
               viewport={{ once: true }}
               className="text-center text-gray-500 text-sm"
             >
-              <p>© {new Date().getFullYear()} Abrar Rahman. All rights reserved.</p>
+              <p>
+                © {new Date().getFullYear()} Abrar Rahman. All rights reserved.
+              </p>
             </motion.div>
           </div>
         </div>

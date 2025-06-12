@@ -104,7 +104,10 @@
 
 /* === Base Layer === */
 @layer base {
-  button, input, select, textarea {
+  button,
+  input,
+  select,
+  textarea {
     @apply border border-gray-600 outline-none ring-1 ring-inset ring-gray-500/50;
   }
 
@@ -112,7 +115,10 @@
     @apply bg-gradient-to-br from-gray-900 to-black text-gray-200;
   }
 
-  button:focus, input:focus, select:focus, textarea:focus {
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
     @apply ring-2 ring-indigo-500;
   }
 }

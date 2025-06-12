@@ -117,7 +117,7 @@ export default function Home() {
                 link: "https://standupsync.onrender.com",
                 delay: 0.6
               }
-            ].map((project, index) => (
+            ].map((project) => (
               <motion.div
                 key={project.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -163,7 +163,7 @@ export default function Home() {
               Get in Touch
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Have a project in mind? Let's discuss how we can work together to bring your ideas to life.
+              Have a project in mind? Let&apos;s discuss how we can work together to bring your ideas to life.
             </p>
           </motion.div>
 

@@ -157,9 +157,9 @@ Modify the projects array in the projects section:
 
 ## 🚀 Deployment
 
-### Vercel (Recommended)
+### Render (Recommended)
 1. Push your code to GitHub
-2. Connect your repository to Vercel
+2. Connect your repository to Render
 3. Deploy with zero configuration
 
 ### Other Platforms

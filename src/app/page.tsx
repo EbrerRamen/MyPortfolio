@@ -117,7 +117,7 @@ export default function Home() {
                 title: 'AI-Powered Resume Analyzer',
                 description:
                   'A full-stack platform that analyzes resumes, provides skill-based feedback, scores overall quality, and generates tailored cover letters & interview questions.',
-                link: 'ai-career-coach-one-rho.vercel.app',
+                link: 'https://ai-career-coach-one-rho.vercel.app',
                 delay: 0.2,
               },
               {

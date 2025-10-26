@@ -114,10 +114,10 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                title: 'HMS Remake',
+                title: 'AI-Powered Resume Analyzer',
                 description:
-                  'A modern Hospital Management System with advanced features for managing patient records, appointments, and hospital operations.',
-                link: 'https://hms-remake.onrender.com',
+                  'A full-stack platform that analyzes resumes, provides skill-based feedback, scores overall quality, and generates tailored cover letters & interview questions.',
+                link: 'ai-career-coach-one-rho.vercel.app',
                 delay: 0.2,
               },
               {
@@ -126,13 +126,6 @@ export default function Home() {
                   'A comprehensive mobile device benchmarking platform that helps users compare and analyze mobile device performance metrics.',
                 link: 'https://mobile-benchmarking-frontend.onrender.com',
                 delay: 0.4,
-              },
-              {
-                title: 'StandupSync',
-                description:
-                  'A collaborative platform for managing and organizing team standup meetings, making daily sync-ups more efficient and organized.',
-                link: 'https://standupsync.onrender.com',
-                delay: 0.6,
               },
             ].map((project) => (
               <motion.div

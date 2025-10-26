@@ -277,7 +277,7 @@ export default function Home() {
                 <Github size={24} />
               </a>
               <a
-                href="https://www.linkedin.com/in/abrar-rahman-7a97b825b/"
+                href="https://www.linkedin.com/in/md-abrar-rahman-shafin-7a97b825b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"

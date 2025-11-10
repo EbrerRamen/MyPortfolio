@@ -13,95 +13,79 @@ import {
 } from 'lucide-react';
 
 export default function Home() {
+  const fadeUp = (delay = 0) => ({
+    initial: { opacity: 0, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
+    transition: { duration: 0.8, delay },
+    viewport: { once: true },
+  });
+
+  const sections = {
+    wrapper: 'py-28 relative',
+    gradient:
+      'absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent',
+    container: 'max-w-7xl mx-auto px-4 sm:px-6 lg:px-8',
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
-      {/* Hero Section */}
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 text-gray-300">
+      {/* ================= HERO SECTION ================= */}
       <section
         id="home"
         className="h-screen flex items-center justify-center relative overflow-hidden"
       >
-        {/* Animated background pattern */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-indigo-500/10 via-transparent to-transparent"></div>
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:14px_24px]"></div>
         </div>
 
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
+          {...fadeUp()}
           className="relative z-10 text-center max-w-4xl mx-auto px-4"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="mb-6"
-          >
-            <span className="text-indigo-400 font-medium tracking-wider uppercase text-sm">
-              Full Stack Developer
-            </span>
-          </motion.div>
+          <span className="text-indigo-400 font-medium uppercase tracking-wider text-sm mb-3 block">
+            Full Stack Developer
+          </span>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
-          >
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
             Hi, I&apos;m Abrar Rahman
-          </motion.h1>
+          </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl mb-12 text-gray-400 font-light max-w-2xl mx-auto"
-          >
+          <p className="text-xl md:text-2xl mb-12 text-gray-400 font-light max-w-2xl mx-auto">
             Crafting elegant solutions to complex problems through clean,
             efficient code and innovative design.
-          </motion.p>
+          </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              className="group bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+              className="group bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-6 rounded-full text-lg font-semibold shadow-lg hover:shadow-xl transition-all"
             >
               <Link href="#projects" className="flex items-center gap-2">
                 View My Work
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>
+
             <Button
               asChild
               variant="outline"
-              className="group border-2 border-gray-700 hover:border-indigo-500 text-white px-8 py-6 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out transform hover:-translate-y-1"
+              className="group border-2 border-gray-700 hover:border-indigo-500 text-white px-8 py-6 rounded-full text-lg font-semibold transition-all"
             >
               <Link href="#contact" className="flex items-center gap-2">
                 Get in Touch
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </Link>
             </Button>
-          </motion.div>
+          </div>
         </motion.div>
       </section>
 
-      {/* About Me Section */}
-      <section id="about" className="py-32 bg-black/40 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+      {/* ================= ABOUT SECTION ================= */}
+      <section id="about" className={sections.wrapper}>
+        <div className={sections.gradient}></div>
+        <div className={sections.container}>
+          <motion.div {...fadeUp()} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
               About Me
             </h2>
@@ -110,325 +94,267 @@ export default function Home() {
               <span className="text-indigo-400 font-semibold">
                 Md. Abrar Rahman Shafin
               </span>
-              , a passionate{' '}
+              , a{' '}
               <span className="text-indigo-400">
                 Computer Science and Engineering
               </span>{' '}
               undergraduate at{' '}
               <span className="text-indigo-400">BRAC University</span> (CGPA:
               3.70/4.00). I specialize in{' '}
-              <span className="text-indigo-400">web development</span> and
-              <span className="text-indigo-400"> machine learning</span>,
-              building innovative, data-driven solutions with an emphasis on
-              clean UI, scalability, and efficient design.
+              <span className="text-indigo-400">web development</span> and{' '}
+              <span className="text-indigo-400">machine learning</span>,
+              focusing on clean UI, scalability, and intelligent systems.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {/* Education */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-white">
-                🎓 Education
-              </h3>
-              <ul className="space-y-4 text-gray-400">
-                <li>
-                  <p className="font-semibold text-white">
-                    B.Sc. in Computer Science and Engineering
-                  </p>
-                  <p>BRAC University (2021–2025)</p>
-                  <p>CGPA: 3.70 / 4.00</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">
-                    Higher Secondary Certificate (HSC)
-                  </p>
-                  <p>National Ideal College, 2020 — GPA: 5.00</p>
-                </li>
-                <li>
-                  <p className="font-semibold text-white">
-                    Secondary School Certificate (SSC)
-                  </p>
-                  <p>Motijheel Govt. Boys’ High School, 2018 — GPA: 5.00</p>
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Skills */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-white">⚙️ Skills</h3>
-              <ul className="text-gray-400 space-y-2">
-                <li>
-                  <strong>Languages:</strong> Python, Java, JavaScript, PHP
-                </li>
-                <li>
-                  <strong>Web:</strong> Django, Flask, Express, React, Node.js,
-                  Laravel, HTML, CSS, Tailwind CSS
-                </li>
-                <li>
-                  <strong>Databases:</strong> MySQL, MongoDB
-                </li>
-                <li>
-                  <strong>ML / Data:</strong> Pandas, NumPy, Scikit-learn,
-                  TensorFlow
-                </li>
-                <li>
-                  <strong>Tools:</strong> Git/GitHub, VS Code, Jupyter, PyCharm,
-                  Colab
-                </li>
-              </ul>
-            </motion.div>
-
-            {/* Languages */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              viewport={{ once: true }}
-              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
-            >
-              <h3 className="text-2xl font-bold mb-4 text-white">
-                🌍 Languages
-              </h3>
-              <ul className="text-gray-400 space-y-2">
-                <li>
-                  <strong>English:</strong> Fluent
-                </li>
-                <li>
-                  <strong>Bengali:</strong> Native
-                </li>
-              </ul>
-
-              <div className="mt-6">
-                <p className="text-gray-400 text-sm italic">
-                  Core strengths: Problem-solving, teamwork, adaptability, and
-                  algorithmic thinking.
-                </p>
-              </div>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                title: '🎓 Education',
+                content: (
+                  <ul className="space-y-4">
+                    <li>
+                      <p className="font-semibold text-white">
+                        B.Sc. in Computer Science and Engineering
+                      </p>
+                      <p>BRAC University (2021–2025) — CGPA: 3.70 / 4.00</p>
+                    </li>
+                    <li>
+                      <p className="font-semibold text-white">
+                        Higher Secondary Certificate
+                      </p>
+                      <p>National Ideal College, 2020 — GPA: 5.00</p>
+                    </li>
+                    <li>
+                      <p className="font-semibold text-white">
+                        Secondary School Certificate
+                      </p>
+                      <p>Motijheel Govt. Boys’ High School, 2018 — GPA: 5.00</p>
+                    </li>
+                  </ul>
+                ),
+              },
+              {
+                title: '⚙️ Skills',
+                content: (
+                  <ul className="space-y-2">
+                    <li>
+                      <strong>Languages:</strong> Python, Java, JavaScript, PHP
+                    </li>
+                    <li>
+                      <strong>Web:</strong> Django, Flask, React, Express,
+                      Node.js, Laravel, Tailwind CSS
+                    </li>
+                    <li>
+                      <strong>Databases:</strong> MySQL, MongoDB
+                    </li>
+                    <li>
+                      <strong>ML / Data:</strong> Pandas, NumPy, Scikit-learn,
+                      TensorFlow
+                    </li>
+                    <li>
+                      <strong>Tools:</strong> Git, VS Code, Jupyter, Colab
+                    </li>
+                  </ul>
+                ),
+              },
+              {
+                title: '🌍 Languages',
+                content: (
+                  <>
+                    <ul className="space-y-2">
+                      <li>
+                        <strong>English:</strong> Fluent
+                      </li>
+                      <li>
+                        <strong>Bengali:</strong> Native
+                      </li>
+                    </ul>
+                    <p className="mt-6 text-sm italic text-gray-400">
+                      Core strengths: problem-solving, teamwork, adaptability,
+                      and algorithmic thinking.
+                    </p>
+                  </>
+                ),
+              },
+            ].map((card, i) => (
+              <motion.div
+                key={card.title}
+                {...fadeUp(0.2 * i)}
+                className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl transition-all"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {card.title}
+                </h3>
+                <div className="text-gray-400">{card.content}</div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
+      {/* ================= PROJECTS SECTION ================= */}
+      <section id="projects" className={sections.wrapper}>
+        <div className={sections.gradient}></div>
+        <div className={sections.container}>
+          <motion.div {...fadeUp()} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
               Featured Projects
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              A collection of my recent work, showcasing my expertise in
-              full-stack development and problem-solving.
+              A showcase of my full-stack and machine learning work.
             </p>
           </motion.div>
 
-          {/* 🧑‍💻 Web Development Projects */}
+          {/* Web Projects */}
           <motion.h3
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            {...fadeUp()}
             className="text-3xl font-semibold mb-10 text-indigo-400 text-center"
           >
             Web Development
           </motion.h3>
 
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 justify-center mb-20">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 mb-20">
             {[
               {
                 title: 'AI-Powered Resume Analyzer',
                 description:
-                  'A full-stack platform that analyzes resumes, provides skill-based feedback, scores overall quality, and generates tailored cover letters & interview questions.',
+                  'Full-stack platform analyzing resumes, providing skill feedback, and generating tailored cover letters.',
                 link: 'https://ai-career-coach-one-rho.vercel.app',
-                delay: 0.2,
               },
               {
                 title: 'Mobile Benchmarking',
                 description:
-                  'A comprehensive mobile device benchmarking platform that helps users compare and analyze mobile device performance metrics.',
+                  'Comprehensive mobile device benchmarking app with real-time performance comparison.',
                 link: 'https://mobile-benchmarking-frontend.onrender.com',
-                delay: 0.4,
               },
               {
                 title: 'Movie Finder Web App',
                 description:
-                  'A sleek React-based web app that lets users explore, search, and discover trending movies in real-time using the TMDB API. Built with Appwrite for backend services and deployed on Vercel.',
+                  'React-based web app to explore trending movies in real-time via the TMDB API. Built with Appwrite and deployed on Vercel.',
                 link: 'https://react-movie-webapp-beta.vercel.app/',
-                delay: 0.6,
               },
-            ].map((project) => (
+            ].map((p, i) => (
               <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: project.delay }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="group bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-300"
+                key={p.title}
+                {...fadeUp(0.2 * i)}
+                whileHover={{ scale: 1.02 }}
+                className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-indigo-500/50 transition-all"
               >
-                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
-                  {project.title}
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {p.title}
                 </h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  {project.description}
+                  {p.description}
                 </p>
                 <Button
                   asChild
-                  className="group/btn bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full"
                 >
                   <a
-                    href={project.link}
+                    href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    View Project
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    View Project <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
               </motion.div>
             ))}
           </div>
 
-          {/* 🤖 Machine Learning Projects */}
+          {/* ML Projects */}
           <motion.h3
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            {...fadeUp()}
             className="text-3xl font-semibold mb-10 text-indigo-400 text-center"
           >
             Machine Learning
           </motion.h3>
 
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 justify-center">
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8">
             {[
-              {
-                title:
-                  'Thesis – Automated Species Identification in Camera Trap Images',
-                description:
-                  'Designed and implemented computer vision models to classify wildlife species for conservation. Improved Faster R-CNN by replacing ResNet50 → Swin Transformer and FPN → BiFPN. Compared with ViT, EfficientNetV2, YOLOv11, and explored zero-shot detection with LlaVa, Kosmos, and Idefics.',
-                link: 'https://github.com/example-thesis',
-                delay: 0.2,
-              },
               {
                 title: 'Credit Score Prediction Model',
                 description:
-                  'Developed a predictive model to estimate credit scores using classification algorithms (KNN, Decision Trees, Random Forest). Applied data preprocessing, feature engineering, and model evaluation to achieve high accuracy.',
+                  'Predicted credit scores using classification algorithms (KNN, Decision Trees, Random Forest) with preprocessing and feature engineering.',
                 link: 'https://github.com/EbrerRamen/CreditScorePrediction',
-                delay: 0.4,
               },
               {
                 title: 'Traffic Situation Prediction',
                 description:
-                  'Built ML models to classify traffic conditions based on vehicle counts. Preprocessed ~3,000 records with temporal and categorical features and achieved 89% accuracy through feature engineering and hyperparameter tuning.',
+                  'Built ML models to classify traffic conditions using ~3,000 records; achieved 89% accuracy after feature engineering.',
                 link: 'https://github.com/EbrerRamen/TrafficSituationPrediction',
-                delay: 0.6,
               },
-            ].map((project) => (
+            ].map((p, i) => (
               <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: project.delay }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="group bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-300"
+                key={p.title}
+                {...fadeUp(0.2 * i)}
+                whileHover={{ scale: 1.02 }}
+                className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-indigo-500/50 transition-all"
               >
-                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
-                  {project.title}
+                <h3 className="text-2xl font-bold mb-4 text-white">
+                  {p.title}
                 </h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
-                  {project.description}
+                  {p.description}
                 </p>
                 <Button
                   asChild
-                  className="group/btn bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                  className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full"
                 >
                   <a
-                    href={project.link}
+                    href={p.link}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2"
                   >
-                    View Project
-                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    View Project <ArrowRight className="w-4 h-4" />
                   </a>
                 </Button>
               </motion.div>
             ))}
           </div>
-          {/* Research / Thesis Section */}
-          <section id="thesis" className="py-32 relative">
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="text-center mb-16"
-              >
-                <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
-                  Research & Thesis
-                </h2>
-                <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-                  My academic research focusing on applying computer vision and
-                  deep learning for wildlife conservation.
-                </p>
-              </motion.div>
+        </div>
+      </section>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02, y: -5 }}
-                className="group bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-300 max-w-3xl mx-auto"
-              >
-                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
-                  Thesis – Automated Species Identification in Camera Trap
-                  Images
-                </h3>
-                <p className="text-gray-400 mb-6 leading-relaxed">
-                  Designed and implemented computer vision models to classify
-                  wildlife species for conservation. Improved Faster R-CNN by
-                  replacing <strong>ResNet50 → Swin Transformer</strong> and
-                  <strong> FPN → BiFPN</strong>, achieving higher accuracy.
-                  Conducted comparative analysis with ViT, EfficientNetV2,
-                  YOLOv11, and explored zero-shot detection using large
-                  vision-language models like
-                  <strong> LlaVa</strong>, <strong>Kosmos</strong>, and{' '}
-                  <strong>Idefics</strong>.
-                </p>
-                <Button
-                  asChild
-                  className="bg-gray-800 text-gray-300 cursor-default px-6 py-3 rounded-full text-sm font-semibold shadow-md transition-all duration-300"
-                >
-                  <span>Private / Unpublished Work</span>
-                </Button>
-              </motion.div>
-            </div>
-          </section>
+      {/* ================= THESIS SECTION ================= */}
+      <section id="thesis" className={sections.wrapper}>
+        <div className={sections.gradient}></div>
+        <div className={sections.container}>
+          <motion.div {...fadeUp()} className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+              Research & Thesis
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              My academic research on applying deep learning and computer vision
+              for wildlife conservation.
+            </p>
+          </motion.div>
+
+          <motion.div
+            {...fadeUp(0.2)}
+            whileHover={{ scale: 1.02 }}
+            className="bg-gray-900/50 p-8 rounded-2xl border border-gray-800 shadow-xl max-w-3xl mx-auto"
+          >
+            <h3 className="text-2xl font-bold mb-4 text-white">
+              Thesis – Automated Species Identification in Camera Trap Images
+            </h3>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Designed computer vision models for wildlife classification.
+              Enhanced Faster R-CNN by integrating
+              <strong> Swin Transformer</strong> and <strong>BiFPN</strong>,
+              compared with ViT, EfficientNetV2, YOLOv11, and explored zero-shot
+              detection using <strong>LlaVa</strong>, <strong>Kosmos</strong>,
+              and <strong>Idefics</strong>.
+            </p>
+            <Button
+              asChild
+              className="bg-gray-800 text-gray-400 cursor-default px-6 py-3 rounded-full text-sm font-semibold"
+            >
+              <span>Private / Unpublished Work</span>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
@@ -436,6 +362,7 @@ export default function Home() {
       <section id="contact" className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -447,11 +374,12 @@ export default function Home() {
               Get in Touch
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              Have a project in mind? Let&apos;s discuss how we can work
-              together to bring your ideas to life.
+              Have a project in mind? Let's discuss how we can work together to
+              bring your ideas to life.
             </p>
           </motion.div>
 
+          {/* Contact Form */}
           <motion.form
             action="https://formspree.io/f/mgvrwgqn"
             method="POST"
@@ -462,39 +390,39 @@ export default function Home() {
             className="space-y-6 bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Your Name"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
-                  placeholder="your.email@example.com"
-                />
-              </div>
+              {[
+                {
+                  label: 'Name',
+                  type: 'text',
+                  id: 'name',
+                  placeholder: 'Your Name',
+                },
+                {
+                  label: 'Email',
+                  type: 'email',
+                  id: 'email',
+                  placeholder: 'your.email@example.com',
+                },
+              ].map((field) => (
+                <div key={field.id}>
+                  <label
+                    htmlFor={field.id}
+                    className="block text-sm font-medium text-gray-300 mb-2"
+                  >
+                    {field.label}
+                  </label>
+                  <input
+                    type={field.type}
+                    id={field.id}
+                    name={field.id}
+                    required
+                    placeholder={field.placeholder}
+                    className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
+                  />
+                </div>
+              ))}
             </div>
+
             <div>
               <label
                 htmlFor="message"
@@ -507,10 +435,11 @@ export default function Home() {
                 name="message"
                 rows={5}
                 required
-                className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
                 placeholder="Your message..."
+                className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
               />
             </div>
+
             <Button
               type="submit"
               className="w-full bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl text-lg font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5"
@@ -521,83 +450,40 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="relative py-16 bg-black/50 backdrop-blur-sm border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col items-center justify-center space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-              className="text-center"
-            >
-              <h3 className="text-2xl font-bold text-white mb-2">
-                Abrar Rahman
-              </h3>
-              <p className="text-gray-400">Full Stack Developer</p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              viewport={{ once: true }}
-              className="flex space-x-6"
-            >
+      {/* ================= FOOTER ================= */}
+      <footer className="py-16 bg-black/50 border-t border-gray-800 text-center">
+        <motion.div {...fadeUp()}>
+          <h3 className="text-2xl font-bold text-white mb-2">Abrar Rahman</h3>
+          <p className="text-gray-400 mb-6">Full Stack Developer</p>
+          <div className="flex justify-center gap-6 mb-6">
+            {[
+              { icon: Github, href: 'https://github.com/EbrerRamen' },
+              {
+                icon: Linkedin,
+                href: 'https://www.linkedin.com/in/md-abrar-rahman-shafin-7a97b825b/',
+              },
+              { icon: Code, href: 'https://leetcode.com/u/abrar_rayman/' },
+              {
+                icon: Facebook,
+                href: 'https://www.facebook.com/abrar.rahman.752002/',
+              },
+              { icon: Mail, href: 'mailto:abrarrahman80@gmail.com' },
+            ].map(({ icon: Icon, href }) => (
               <a
-                href="https://github.com/EbrerRamen"
+                key={href}
+                href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
               >
-                <Github size={24} />
+                <Icon size={24} />
               </a>
-              <a
-                href="https://www.linkedin.com/in/md-abrar-rahman-shafin-7a97b825b/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-              >
-                <Linkedin size={24} />
-              </a>
-              <a
-                href="https://leetcode.com/u/abrar_rayman/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-              >
-                <Code size={24} />
-              </a>
-              <a
-                href="https://www.facebook.com/abrar.rahman.752002/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-              >
-                <Facebook size={24} />
-              </a>
-              <a
-                href="mailto:abrarrahman80@gmail.com"
-                className="text-gray-400 hover:text-white transition-colors duration-300 hover:scale-110 transform"
-              >
-                <Mail size={24} />
-              </a>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              viewport={{ once: true }}
-              className="text-center text-gray-500 text-sm"
-            >
-              <p>
-                © {new Date().getFullYear()} Abrar Rahman. All rights reserved.
-              </p>
-            </motion.div>
+            ))}
           </div>
-        </div>
+          <p className="text-gray-500 text-sm">
+            © {new Date().getFullYear()} Abrar Rahman. All rights reserved.
+          </p>
+        </motion.div>
       </footer>
     </div>
   );

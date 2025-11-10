@@ -127,6 +127,13 @@ export default function Home() {
                 link: 'https://mobile-benchmarking-frontend.onrender.com',
                 delay: 0.4,
               },
+              {
+                title: 'Movie Finder Web App',
+                description:
+                  'A sleek React-based web app that lets users explore, search, and discover trending movies in real-time using the TMDB API. Built with Appwrite for backend services and deployed on Vercel.',
+                link: 'https://react-movie-webapp-beta.vercel.app/',
+                delay: 0.6,
+              },              
             ].map((project) => (
               <motion.div
                 key={project.title}

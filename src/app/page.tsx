@@ -191,6 +191,8 @@ export default function Home() {
           </motion.div>
 
           <motion.form
+            action="https://formspree.io/f/mgvrwgqn"
+            method="POST"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -199,44 +201,41 @@ export default function Home() {
           >
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
+                <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                   Name
                 </label>
                 <input
                   type="text"
                   id="name"
+                  name="name"
+                  required
                   className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
                   placeholder="Your Name"
                 />
               </div>
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-300 mb-2"
-                >
+                <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
+                  name="email"
+                  required
                   className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
             </div>
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-300 mb-2"
-              >
+              <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
                 Message
               </label>
               <textarea
                 id="message"
+                name="message"
                 rows={5}
+                required
                 className="w-full p-4 bg-gray-800/50 border border-gray-700 rounded-xl text-gray-100 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-200"
                 placeholder="Your message..."
               />

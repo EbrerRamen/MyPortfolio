@@ -91,6 +91,136 @@ export default function Home() {
         </motion.div>
       </section>
 
+      {/* About Me Section */}
+      <section id="about" className="py-32 bg-black/40 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+              About Me
+            </h2>
+            <p className="text-gray-400 text-lg max-w-3xl mx-auto leading-relaxed">
+              I’m{' '}
+              <span className="text-indigo-400 font-semibold">
+                Md. Abrar Rahman Shafin
+              </span>
+              , a passionate{' '}
+              <span className="text-indigo-400">
+                Computer Science and Engineering
+              </span>{' '}
+              undergraduate at{' '}
+              <span className="text-indigo-400">BRAC University</span> (CGPA:
+              3.70/4.00). I specialize in{' '}
+              <span className="text-indigo-400">web development</span> and
+              <span className="text-indigo-400"> machine learning</span>,
+              building innovative, data-driven solutions with an emphasis on
+              clean UI, scalability, and efficient design.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Education */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                🎓 Education
+              </h3>
+              <ul className="space-y-4 text-gray-400">
+                <li>
+                  <p className="font-semibold text-white">
+                    B.Sc. in Computer Science and Engineering
+                  </p>
+                  <p>BRAC University (2021–2025)</p>
+                  <p>CGPA: 3.70 / 4.00</p>
+                </li>
+                <li>
+                  <p className="font-semibold text-white">
+                    Higher Secondary Certificate (HSC)
+                  </p>
+                  <p>National Ideal College, 2020 — GPA: 5.00</p>
+                </li>
+                <li>
+                  <p className="font-semibold text-white">
+                    Secondary School Certificate (SSC)
+                  </p>
+                  <p>Motijheel Govt. Boys’ High School, 2018 — GPA: 5.00</p>
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Skills */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-white">⚙️ Skills</h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>
+                  <strong>Languages:</strong> Python, Java, JavaScript, PHP
+                </li>
+                <li>
+                  <strong>Web:</strong> Django, Flask, Express, React, Node.js,
+                  Laravel, HTML, CSS, Tailwind CSS
+                </li>
+                <li>
+                  <strong>Databases:</strong> MySQL, MongoDB
+                </li>
+                <li>
+                  <strong>ML / Data:</strong> Pandas, NumPy, Scikit-learn,
+                  TensorFlow
+                </li>
+                <li>
+                  <strong>Tools:</strong> Git/GitHub, VS Code, Jupyter, PyCharm,
+                  Colab
+                </li>
+              </ul>
+            </motion.div>
+
+            {/* Languages */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              viewport={{ once: true }}
+              className="bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl"
+            >
+              <h3 className="text-2xl font-bold mb-4 text-white">
+                🌍 Languages
+              </h3>
+              <ul className="text-gray-400 space-y-2">
+                <li>
+                  <strong>English:</strong> Fluent
+                </li>
+                <li>
+                  <strong>Bengali:</strong> Native
+                </li>
+              </ul>
+
+              <div className="mt-6">
+                <p className="text-gray-400 text-sm italic">
+                  Core strengths: Problem-solving, teamwork, adaptability, and
+                  algorithmic thinking.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>

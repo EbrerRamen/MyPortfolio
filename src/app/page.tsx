@@ -241,7 +241,18 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 justify-center">
+          {/* 🧑‍💻 Web Development Projects */}
+          <motion.h3
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl font-semibold mb-10 text-indigo-400 text-center"
+          >
+            Web Development
+          </motion.h3>
+
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 justify-center mb-20">
             {[
               {
                 title: 'AI-Powered Resume Analyzer',
@@ -262,6 +273,75 @@ export default function Home() {
                 description:
                   'A sleek React-based web app that lets users explore, search, and discover trending movies in real-time using the TMDB API. Built with Appwrite for backend services and deployed on Vercel.',
                 link: 'https://react-movie-webapp-beta.vercel.app/',
+                delay: 0.6,
+              },
+            ].map((project) => (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: project.delay }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  {project.description}
+                </p>
+                <Button
+                  asChild
+                  className="group/btn bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-full text-sm font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    View Project
+                    <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* 🤖 Machine Learning Projects */}
+          <motion.h3
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-3xl font-semibold mb-10 text-indigo-400 text-center"
+          >
+            Machine Learning
+          </motion.h3>
+
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 justify-center">
+            {[
+              {
+                title:
+                  'Thesis – Automated Species Identification in Camera Trap Images',
+                description:
+                  'Designed and implemented computer vision models to classify wildlife species for conservation. Improved Faster R-CNN by replacing ResNet50 → Swin Transformer and FPN → BiFPN. Compared with ViT, EfficientNetV2, YOLOv11, and explored zero-shot detection with LlaVa, Kosmos, and Idefics.',
+                link: 'https://github.com/example-thesis', 
+                delay: 0.2,
+              },
+              {
+                title: 'Credit Score Prediction Model',
+                description:
+                  'Developed a predictive model to estimate credit scores using classification algorithms (KNN, Decision Trees, Random Forest). Applied data preprocessing, feature engineering, and model evaluation to achieve high accuracy.',
+                link: 'https://github.com/EbrerRamen/CreditScorePrediction', 
+                delay: 0.4,
+              },
+              {
+                title: 'Traffic Situation Prediction',
+                description:
+                  'Built ML models to classify traffic conditions based on vehicle counts. Preprocessed ~3,000 records with temporal and categorical features and achieved 89% accuracy through feature engineering and hyperparameter tuning.',
+                link: 'https://github.com/EbrerRamen/TrafficSituationPrediction', 
                 delay: 0.6,
               },
             ].map((project) => (

@@ -36,6 +36,13 @@ export default function RootLayout({
                   <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </Link>
                 <Link
+                  href="#about"
+                  className="text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
+                >
+                  About
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
+                </Link>
+                <Link
                   href="#projects"
                   className="text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300 relative group"
                 >

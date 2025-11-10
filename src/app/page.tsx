@@ -327,21 +327,21 @@ export default function Home() {
                   'Thesis – Automated Species Identification in Camera Trap Images',
                 description:
                   'Designed and implemented computer vision models to classify wildlife species for conservation. Improved Faster R-CNN by replacing ResNet50 → Swin Transformer and FPN → BiFPN. Compared with ViT, EfficientNetV2, YOLOv11, and explored zero-shot detection with LlaVa, Kosmos, and Idefics.',
-                link: 'https://github.com/example-thesis', 
+                link: 'https://github.com/example-thesis',
                 delay: 0.2,
               },
               {
                 title: 'Credit Score Prediction Model',
                 description:
                   'Developed a predictive model to estimate credit scores using classification algorithms (KNN, Decision Trees, Random Forest). Applied data preprocessing, feature engineering, and model evaluation to achieve high accuracy.',
-                link: 'https://github.com/EbrerRamen/CreditScorePrediction', 
+                link: 'https://github.com/EbrerRamen/CreditScorePrediction',
                 delay: 0.4,
               },
               {
                 title: 'Traffic Situation Prediction',
                 description:
                   'Built ML models to classify traffic conditions based on vehicle counts. Preprocessed ~3,000 records with temporal and categorical features and achieved 89% accuracy through feature engineering and hyperparameter tuning.',
-                link: 'https://github.com/EbrerRamen/TrafficSituationPrediction', 
+                link: 'https://github.com/EbrerRamen/TrafficSituationPrediction',
                 delay: 0.6,
               },
             ].map((project) => (
@@ -377,6 +377,58 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+          {/* Research / Thesis Section */}
+          <section id="thesis" className="py-32 relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/5 to-transparent"></div>
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="text-center mb-16"
+              >
+                <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
+                  Research & Thesis
+                </h2>
+                <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                  My academic research focusing on applying computer vision and
+                  deep learning for wildlife conservation.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -5 }}
+                className="group bg-gray-900/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800 shadow-xl hover:shadow-2xl hover:border-indigo-500/50 transition-all duration-300 max-w-3xl mx-auto"
+              >
+                <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-indigo-400 transition-colors">
+                  Thesis – Automated Species Identification in Camera Trap
+                  Images
+                </h3>
+                <p className="text-gray-400 mb-6 leading-relaxed">
+                  Designed and implemented computer vision models to classify
+                  wildlife species for conservation. Improved Faster R-CNN by
+                  replacing <strong>ResNet50 → Swin Transformer</strong> and
+                  <strong> FPN → BiFPN</strong>, achieving higher accuracy.
+                  Conducted comparative analysis with ViT, EfficientNetV2,
+                  YOLOv11, and explored zero-shot detection using large
+                  vision-language models like
+                  <strong> LlaVa</strong>, <strong>Kosmos</strong>, and{' '}
+                  <strong>Idefics</strong>.
+                </p>
+                <Button
+                  asChild
+                  className="bg-gray-800 text-gray-300 cursor-default px-6 py-3 rounded-full text-sm font-semibold shadow-md transition-all duration-300"
+                >
+                  <span>Private / Unpublished Work</span>
+                </Button>
+              </motion.div>
+            </div>
+          </section>
         </div>
       </section>
 

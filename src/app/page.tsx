@@ -195,7 +195,7 @@ export default function Home() {
 
       {/* ================= PROJECTS SECTION ================= */}
       <section id="projects" className={sections.wrapper}>
-        <div className={sections.gradient}></div>
+        <div className={`${sections.gradient} pointer-events-none`}></div>
         <div className={sections.container}>
           <motion.div {...fadeUp()} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">
@@ -320,7 +320,7 @@ export default function Home() {
 
       {/* ================= THESIS SECTION ================= */}
       <section id="thesis" className={sections.wrapper}>
-        <div className={sections.gradient}></div>
+        <div className={`${sections.gradient} pointer-events-none`}></div>
         <div className={sections.container}>
           <motion.div {...fadeUp()} className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300">

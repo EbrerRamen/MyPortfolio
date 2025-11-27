@@ -234,6 +234,12 @@ export default function Home() {
                   'React-based web app to explore trending movies in real-time via the TMDB API. Built with Appwrite and deployed on Vercel.',
                 link: 'https://react-movie-webapp-beta.vercel.app/',
               },
+              {
+                title: 'DayMate - AI Day Planner',
+                description:
+                  'A personal productivity web app that provides real-time weather, top news, and an AI-powered daily planner. Built with FastAPI, React, and OpenAI API.',
+                link: 'https://daymate-ten.vercel.app/',
+              },
             ].map((p, i) => (
               <motion.div
                 key={p.title}

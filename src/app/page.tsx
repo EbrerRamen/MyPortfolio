@@ -153,7 +153,7 @@ export default function Home() {
                       TensorFlow
                     </li>
                     <li>
-                      <strong>Tools:</strong> Git, GitHub, Jira, Postman 
+                      <strong>Tools:</strong> Git, GitHub, Jira, Postman
                     </li>
                   </ul>
                 ),

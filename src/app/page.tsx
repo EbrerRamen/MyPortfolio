@@ -139,11 +139,11 @@ export default function Home() {
                 content: (
                   <ul className="space-y-2">
                     <li>
-                      <strong>Languages:</strong> Python, Java, JavaScript, PHP
+                      <strong>Languages:</strong> Python, JavaScript
                     </li>
                     <li>
-                      <strong>Web:</strong> Django, Flask, React, Express,
-                      Node.js, Laravel, Tailwind CSS
+                      <strong>Web:</strong> Django, Flask, React.js, Express.js,
+                      Node.js, HTML, CSS, Tailwind CSS, Bootstrap, jQuery
                     </li>
                     <li>
                       <strong>Databases:</strong> MySQL, MongoDB
@@ -153,7 +153,7 @@ export default function Home() {
                       TensorFlow
                     </li>
                     <li>
-                      <strong>Tools:</strong> Git, VS Code, Jupyter, Colab
+                      <strong>Tools:</strong> Git, GitHub, Jira, Postman 
                     </li>
                   </ul>
                 ),
@@ -221,6 +221,12 @@ export default function Home() {
                 description:
                   'Full-stack platform analyzing resumes, providing skill feedback, and generating tailored cover letters.',
                 link: 'https://ai-career-coach-one-rho.vercel.app',
+              },
+              {
+                title: 'Simon Game',
+                description:
+                  'Classic Simon Says memory game built for the web—repeat the color sequence as it grows longer each round.',
+                link: 'https://ebrerramen.github.io/simon-game/',
               },
               {
                 title: 'Mobile Benchmarking',

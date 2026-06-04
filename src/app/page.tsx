@@ -228,6 +228,12 @@ export default function Home() {
                   'Classic Simon Says memory game built for the web—repeat the color sequence as it grows longer each round.',
                 link: 'https://ebrerramen.github.io/simon-game/',
               },
+                            {
+                title: 'Inkwell',
+                description:
+                  'Full-stack blog application built with Node.js, Express, EJS, and Bootstrap—create, edit, delete, and search/filter posts with a responsive interface.',
+                link: 'https://blog-web-app-production-1743.up.railway.app/',
+              },
               {
                 title: 'Mobile Benchmarking',
                 description:

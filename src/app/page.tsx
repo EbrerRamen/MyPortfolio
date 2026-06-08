@@ -228,6 +228,12 @@ export default function Home() {
                   'Full-stack platform analyzing resumes, providing skill feedback, and generating tailored cover letters.',
                 link: 'https://ai-career-coach-one-rho.vercel.app',
               },
+                            {
+                title: 'Movie Finder Web App',
+                description:
+                  'React-based web app to explore trending movies in real-time via the TMDB API. Built with Appwrite and deployed on Vercel.',
+                link: 'https://react-movie-webapp-beta.vercel.app/',
+              },
               {
                 title: 'Simon Game',
                 description:
@@ -241,16 +247,16 @@ export default function Home() {
                 link: 'https://blog-web-app-production-1743.up.railway.app/',
               },
               {
+                title: 'Movie Explorer — iOS App',
+                description:
+                  'Cross-platform mobile app built with React Native and Expo to explore latest, trending, and searched movies. Integrates TMDB API for real-time movie data and Appwrite backend for tracking trending searches. Includes movie search, detailed movie pages with ratings, genres, budget, and production info, all within a smooth and responsive UI.',
+                link: 'https://github.com/EbrerRamen/ios_movie_app',
+              },
+              {
                 title: 'Mobile Benchmarking',
                 description:
                   'Comprehensive mobile device benchmarking app with real-time performance comparison.',
                 link: 'https://mobile-benchmarking-frontend.onrender.com',
-              },
-              {
-                title: 'Movie Finder Web App',
-                description:
-                  'React-based web app to explore trending movies in real-time via the TMDB API. Built with Appwrite and deployed on Vercel.',
-                link: 'https://react-movie-webapp-beta.vercel.app/',
               },
               {
                 title: 'DayMate - AI Day Planner',

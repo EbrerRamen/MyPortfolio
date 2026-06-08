@@ -123,13 +123,13 @@ export default function Home() {
                       <p className="font-semibold text-white">
                         Higher Secondary Certificate
                       </p>
-                      <p>National Ideal College, 2020 — GPA: 5.00</p>
+                      <p>National Ideal College, 2020 — GPA: 5.00 / 5.00</p>
                     </li>
                     <li>
                       <p className="font-semibold text-white">
                         Secondary School Certificate
                       </p>
-                      <p>Motijheel Govt. Boys’ High School, 2018 — GPA: 5.00</p>
+                      <p>Motijheel Govt. Boys’ High School, 2018 — GPA: 5.00 / 5.00</p>
                     </li>
                   </ul>
                 ),
@@ -216,6 +216,12 @@ export default function Home() {
 
           <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 mb-20">
             {[
+              {
+                title: 'Valorant Hub',
+                description:
+                  'Interactive web application to explore Valorant agents, gamemodes, maps, and weapons using real-time data from valorant-api.com. Includes agent filtering, detailed ability breakdowns with key bindings, and responsive UI built with EJS, Bootstrap, and Node.js.',
+                link: 'https://valorant-hub-production.up.railway.app/',
+              },
               {
                 title: 'AI-Powered Resume Analyzer',
                 description:
